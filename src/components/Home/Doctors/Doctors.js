@@ -3,11 +3,11 @@ import Doctor from "../Doctor/Doctor";
 
 const Doctors = () => {
   const [doctors, setDoctors] = useState([]);
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/doctors")
-  //     .then((res) => res.json())
-  //     .then((data) => setDoctors(data));
-  // }, []);
+  useEffect(() => {
+    fetch("https://serene-mesa-55532.herokuapp.com/doctors")
+      .then((res) => res.json())
+      .then((data) => setDoctors(data));
+  }, []);
 
   return (
     <section className="doctors">

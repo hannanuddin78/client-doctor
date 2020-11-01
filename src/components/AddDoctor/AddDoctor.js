@@ -21,13 +21,15 @@ const AddDoctor = () => {
     formData.append("file", file);
     formData.append("name", info.name);
     formData.append("email", info.email);
+    formData.append("phone", info.number);
 
-    fetch("http://localhost:5000/addADoctor", {
+    fetch("https://serene-mesa-55532.herokuapp.com/addADoctor", {
       method: "POST",
       body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
+        alert("You add a Doctor Successfully");
         console.log(data);
       })
       .catch((error) => {
@@ -62,6 +64,14 @@ const AddDoctor = () => {
               className="form-control"
               name="name"
               placeholder="Name"
+            />
+            <label htmlFor="exampleInputPassword1">Name</label>
+            <input
+              onBlur={handleBlur}
+              type="number"
+              className="form-control"
+              name="number"
+              placeholder="Phone Number"
             />
           </div>
           <div className="form-group">
