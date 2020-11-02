@@ -15,9 +15,9 @@ const AddDoctor = () => {
     setFile(newFile);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const formData = new FormData();
-    console.log(info);
     formData.append("file", file);
     formData.append("name", info.name);
     formData.append("email", info.email);
